@@ -1,0 +1,23 @@
+.btn-close {
+  float: right;
+}
+
+.bi-check2 {
+  font-size: 2rem;
+  color: cornflowerblue;
+  cursor: pointer;
+}
+
+.bi-check2:hover {
+  color: darkviolet;
+}
+
+.bi-arrow-90deg-up {
+  font-size: 1.5rem;
+  color: maroon;
+  cursor: pointer;
+}
+
+.bi-arrow-90deg-up:hover {
+  color: orangered;
+}

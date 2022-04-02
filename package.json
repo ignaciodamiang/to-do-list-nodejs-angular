@@ -1,0 +1,41 @@
+{
+  "name": "to-do-list-nodejs-angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "instapi": "npm install",
+    "instcli": "cd client && npm install",
+    "start": "concurrently \"cd client && npm start\" \"nodemon api/server.js\"",
+    "migr": "npx sequelize-cli db:migrate:undo && npx sequelize-cli db:migrate",
+    "seed": "npx sequelize-cli db:seed:undo:all && npx sequelize-cli db:seed:all",
+    "dev": "npm run instapi && npm run instcli && npm run migr && npm run seed && npm run start"
+  },
+  "proxy": "http://localhost:3000",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ignaciodamiang/to-do-list-nodejs-angular.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ignaciodamiang/to-do-list-nodejs-angular/issues"
+  },
+  "homepage": "https://github.com/ignaciodamiang/to-do-list-nodejs-angular#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "concurrently": "^6.5.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "faker": "^5.5.3",
+    "jsonwebtoken": "^8.5.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.12.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "sequelize-cli": "^6.3.0"
+  }
+}

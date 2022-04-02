@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col">
+      <form class="d-flex mt-2 mx-auto">
+        <input
+          name="newTaskName"
+          type="text"
+          class="form-control"
+          placeholder="Add task"
+          [(ngModel)]="newTaskName"
+        />
+        <button
+          (click)="addTask()"
+          type="button"
+          class="btn btn-outline-success text-nowrap"
+        >
+          Add Task
+        </button>
+      </form>
+    </div>
+    <div class="col-1"></div>
+  </div>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col">
+      <div class="card mt-2 border-0">
+        <div class="card-body">
+          <h5 class="card-title">{{ folder.folderName }}</h5>
+        </div>
+        <div class="card-body">
+          <form class="row" [formGroup]="taskForm">
+            <app-task></app-task>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>

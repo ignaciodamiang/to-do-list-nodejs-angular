@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col">
+      <form class="d-flex mt-2 addfolder mx-auto">
+        <input
+          name="newFolderName"
+          type="text"
+          class="form-control"
+          placeholder="Add folder"
+          [(ngModel)]="newFolderName"
+        />
+        <button
+          (click)="addFolder()"
+          type="submit"
+          class="btn btn-outline-success text-nowrap"
+        >
+          Add Folder
+        </button>
+      </form>
+    </div>
+    <div class="col-1"></div>
+  </div>
+</div>
+<div *ngIf="folders">
+  <div class="container">
+    <form class="row" [formGroup]="folderForm">
+      <app-folder></app-folder>
+    </form>
+  </div>
+</div>

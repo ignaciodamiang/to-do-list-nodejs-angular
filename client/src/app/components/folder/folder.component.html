@@ -1,0 +1,93 @@
+<div class="row">
+  <div
+    *ngFor="let folder of folders"
+    class="card border-0 col-12 col-sm-6 col-md-4 col-lg-3 g-4"
+  >
+    <div class="card border-info">
+      <div class="card-body">
+        <h5 class="card-title">
+          {{ folder.folderName }}
+          <!-- Button trigger modal -->
+          <button
+            href="#"
+            class="btn btn-link h6 text-decoration-none fw-light"
+            data-bs-toggle="modal"
+            data-bs-target="#editModal"
+            (click)="updateFolder(folder)"
+          >
+            Edit
+          </button>
+        </h5>
+        <div class="card-body d-flex justify-content-center">
+          <div
+            class="btn-group"
+            role="group"
+            aria-label="Basic outlined example"
+          >
+            <a
+              href="api/folders/{{ folder._id }}"
+              class="btn btn-outline-success text-nowrap"
+            >
+              View Items
+            </a>
+            <button
+              class="btn btn-outline-danger text-nowrap"
+              (click)="deleteFolder(folder)"
+            >
+              Remove
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="editModal"
+  tabindex="-1"
+  aria-labelledby="editModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editModalLabel">Edit folder name:</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <form>
+        <div class="modal-body">
+          <input
+            name="editedFolderName"
+            type="text"
+            class="form-control"
+            placeholder="Changed folder name"
+            [(ngModel)]="editedFolderName"
+          />
+        </div>
+        <div class="modal-footer">
+          <button
+            type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal"
+          >
+            Close
+          </button>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            (click)="editFolderName()"
+          >
+            Save
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
